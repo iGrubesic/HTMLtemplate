@@ -22,3 +22,25 @@ $secondary: #1C1C1C !default;
 
 $container-width: 1024px !default;
 $base-space-unit: 1rem  !default;
+
+@mixin circle($size) {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  left: calc(50% - #{$size/2});
+  top: calc(50% - #{$size/2});
+  width: $size;
+  height: $size;
+}
+
+$size: 200px;
+.progress-pie-chart {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+  background-color: #E5E5E5;
+  position: relative;
+  &.gt-50 {
+    background-color: #81CE97;
+  }
+}
